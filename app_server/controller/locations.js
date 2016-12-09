@@ -3,7 +3,7 @@ module.exports.locationInfo = function (req, res, next) {
 };
 
 module.exports.addReview = function (req, res, next) {
-    res.render("index", {"title": "add review"});
+    res.render("location-review-form", {"title": "add review"});
 };
 
 module.exports.homelist = function (req, res, next) {
