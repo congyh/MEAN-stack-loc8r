@@ -1,11 +1,33 @@
 doctype html
 html
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title= title
-    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
-  script(src='/javascript/jquery-3.1.1.min.js')
-  script(src='/bootstrap/js/bootstrap.min.js')
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title= title
+        link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        // 如果在类的前面不加任何前缀, 代表使用默认的div元素
+        // 这里创建了一个固定在顶端的导航栏
+        .navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    a.navbar-brand(href='/') Loc8r
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-type='#navbar-main')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                #navbar-main.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/about/') About
+        // 使用div, 并设置类别为container能够确保充满整个屏幕
+        .container
+            block content
+            footer
+                .row
+                    .col-xs-12
+                        small &copy; congyh 2016
+
+
+        script(src='/javascript/jquery-3.1.1.min.js')
+        script(src='/bootstrap/js/bootstrap.min.js')
