@@ -44,7 +44,12 @@ module.exports.locationInfo = function (req, res, next) {
 };
 
 module.exports.addReview = function (req, res, next) {
-    res.render("location-review-form", {"title": "add review"});
+    res.render("location-review-form", {
+        title: "Review Starcups on Loc8r",
+        pageHeader: {
+            title: "Review Starcups"
+        }
+    });
 };
 
 module.exports.homelist = function (req, res, next) {

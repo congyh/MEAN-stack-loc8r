@@ -58,7 +58,8 @@ block content
                                             span.reviewAuthor= review.author
                                             small.reviewTimestamp= review.timestamp
                                         .col-xs-12
-                                            p!= review.reviewText
+                                            // 这里将用户的换行替换成html的换行标签, 能够在显示中还原用户的输入
+                                            p!= (review.reviewText).replace('/\n/g', '<br />')
         .col-xs-12.col-md-3
             p.lead #{location.name} #{sidebar.context}
             p #{sidebar.callToAction}

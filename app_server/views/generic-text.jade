@@ -5,8 +5,5 @@ block content
         .col-xs-12.col-md-6
             h1= title
     .row.col-xs-12
-        p
-            | Loc8r was created to help people find places to sit down and get a bit of work done.
-            // 以"|"管道符开始的行能够接html元素
-            | <br /><br />
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed lorem ac nisi dignissim accumsan.
+        p !{content.replace(/\n/g, '<br />')}
+
