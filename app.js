@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 require('./app_server/models/db');
 
 var index = require('./app_server/routes/index');
+// 以下是新增的路由
+var apiIndex = require('./app_api/routes/index');
 var users = require('./app_server/routes/users');
 
 var app = express();
@@ -24,6 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+// 以下是新增的路由
+app.use('/api', apiIndex);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
