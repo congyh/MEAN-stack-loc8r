@@ -1,0 +1,100 @@
+db.locations.save({
+    name: '星巴克咖啡',
+    address: '北京市朝阳区朝北大悦城1层',
+    rating: 3,
+    facilities: ['热饮', '食物', '高速wifi'],
+    coords: [39.9307260000,116.5248240000],
+    openingTimes: [{
+        days: '周一 - 周五',
+        opening: '7:00am',
+        closing: '7:00pm',
+        closed: false
+    }, {
+        days: '周六',
+        opening: '8:00am',
+        closing: '5:00pm',
+        closed: false
+    }, {
+        days: '周日',
+        closed: true
+    }]
+})
+
+db.locations.update({
+    name: '星巴克咖啡'
+}, {
+    $push: {
+        reviews: {
+            author: '张三',
+            id: ObjectId(),
+            rating: 5,
+            timestamp: new Date("Jul 16, 2016"),
+            reviewText: "我很喜欢这个地方!"
+        }
+    }
+})
+
+
+db.locations.save({
+    name: '漫咖啡',
+    address: '北京市海淀区西土城路10号北京邮电大学',
+    rating: 4,
+    facilities: ['热饮', '食物', '高速wifi'],
+    coords: [39.9693070000,116.3639970000],
+    openingTimes: [{
+        days: '周一 - 周五',
+        opening: '8:00am',
+        closing: '8:00pm',
+        closed: false
+    }, {
+        days: '周六',
+        opening: '8:00am',
+        closing: '5:00pm',
+        closed: false
+    }, {
+        days: '周日',
+        opening: '8:00am',
+        closing: '5:00pm',
+        closed: false
+    }],
+    reviews: {
+        author: '李四',
+        id: ObjectId(),
+        rating: 5,
+        timestamp: new Date("Sep 19, 2016"),
+        reviewText: "这里很不错!"
+    }
+})
+
+db.locations.save({
+    name: '太平洋咖啡',
+    address: '西直门',
+    rating: 4,
+    facilities: ['热饮', '高速wifi'],
+    coords: [39.9459270000,116.3741590000],
+    openingTimes: [{
+        days: '周一 - 周五',
+        opening: '10:00am',
+        closing: '10:00pm',
+        closed: false
+    }, {
+        days: '周六',
+        opening: '8:00am',
+        closing: '5:00pm',
+        closed: false
+    }, {
+        days: '周日',
+        opening: '8:00am',
+        closing: '5:00pm',
+        closed: false
+    }],
+    reviews: {
+        author: '王五',
+        id: ObjectId(),
+        rating: 3,
+        timestamp: new Date("Dec 19, 2016"),
+        reviewText: "咖啡不太好喝.\n不会再来了."
+    }
+})
+
+
