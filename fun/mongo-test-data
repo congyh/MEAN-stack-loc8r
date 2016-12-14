@@ -26,7 +26,7 @@ db.locations.update({
     $push: {
         reviews: {
             author: '张三',
-            id: ObjectId(),
+            _id: ObjectId(),
             rating: 5,
             timestamp: new Date("Jul 16, 2016"),
             reviewText: "我很喜欢这个地方!"
@@ -59,7 +59,7 @@ db.locations.save({
     }],
     reviews: {
         author: '李四',
-        id: ObjectId(),
+        _id: ObjectId(),
         rating: 5,
         timestamp: new Date("Sep 19, 2016"),
         reviewText: "这里很不错!"
@@ -90,7 +90,7 @@ db.locations.save({
     }],
     reviews: {
         author: '王五',
-        id: ObjectId(),
+        _id: ObjectId(),
         rating: 3,
         timestamp: new Date("Dec 19, 2016"),
         reviewText: "咖啡不太好喝.\n不会再来了."

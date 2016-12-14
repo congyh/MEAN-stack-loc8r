@@ -35,3 +35,4 @@ var locationSchema = new mongoose.Schema({
 // 省略了第三个参数, 默认会以第一个参数的小写复数形式创建一个数据库的collection(
 // 实际上也就相当于关系数据库中的表)
 mongoose.model('Location', locationSchema);
+

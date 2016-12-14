@@ -10,7 +10,6 @@ router.get('/locations', ctrlLocations.locationsListByDistance);
 // 每个controller方法明确的指出了用途
 router.post('/locations', ctrlLocations.locationsCreate);
 router.get('/locations/:locationId', ctrlLocations.locationsReadOne);
-// TODO 下面两个方法貌似没有了
 router.put('/locations/:locationId', ctrlLocations.locationsUpdateOne);
 router.delete('/locations/:locationId', ctrlLocations.locationsDeleteOne);
 
