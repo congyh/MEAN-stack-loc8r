@@ -4,7 +4,9 @@ var ctrlLocations = require("../controllers/locations");
 var ctrlOthers = require("../controllers/others");
 
 /* GET home page. */
-router.get('/', ctrlLocations.homelist);
+// router.get('/', ctrlLocations.homelist);
+// 将主页路由转交给Angular SPA
+router.get('/', ctrlOthers.angularApp);
 router.get("/location", ctrlLocations.locationInfo);
 router.get("/location/review/new", ctrlLocations.addReview);
 router.get("/about", ctrlOthers.about);
