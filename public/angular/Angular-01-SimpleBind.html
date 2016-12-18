@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html ng-app="loc8rApp">
 <head>
     <meta charset="UTF-8">
     <title>Angular binding test</title>
     <script src="angular.min.js"></script>
+    <!--这里一定要记得引入一个模块-->
+    <script src="loc8rApp.js"></script>
 </head>
-<body>
+<body ng-controller="myController">
     <input ng-model="myInput" />
     <h1>Hello {{myInput}}</h1>
+    <ul>
+        <li ng-repeat="item in items">{{item}}</li>
+    </ul>
 </body>
 </html>
