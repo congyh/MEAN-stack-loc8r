@@ -1,3 +1,15 @@
+// server端如果想操控REST API, 需要使用request模块
+var request = require('request');
+
+// 尽量将需要定义的全局变量定义在对象中, 减少全局变量的污染
+var apiOptions = {
+    server: "http://localhost:3000"
+};
+
+if (process.env.NODE_ENV === 'production') {
+    apiOptions.server = "https://sheltered-everglades-85543.herokuapp.com/";
+}
+
 module.exports.locationInfo = function (req, res, next) {
     res.render("location-info", {
         title: "Starcups",
