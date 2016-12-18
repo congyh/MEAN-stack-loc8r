@@ -37,7 +37,10 @@ module.exports.locationsCreate = function (req, res, next) {
 };
 
 module.exports.locationsListByDistance = function (req, res, next) {
-    res.send("测试get list方法成功");
+    Location.find()
+        .exec(function (err, locations) {
+            sendJsonResponse(res, 200, locations)
+        })
 };
 
 module.exports.locationsReadOne = function (req, res, next) {
@@ -54,5 +57,20 @@ module.exports.locationsUpdateOne = function (req, res, next) {
 };
 
 module.exports.locationsDeleteOne = function (req, res, next) {
-    sendJsonResponse(res, 200, {});
+    var locationId = req.params.locationId;
+    if (locationId) {
+        Location.findByIdAndRemove(locationId)
+            .exec(function (err, location) {
+                if (err) {
+                    sendJsonResponse(res, 404, err);
+                    return;
+                } else {// 成功
+                    sendJsonResponse(res, 204, null);
+                }
+            });
+    } else {
+        sendJsonResponse(res, 404, {
+            "message": "No locationId!"
+        })
+    }
 };
